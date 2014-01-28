@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rs_number: MyString
+  snpedia_revision: MyString
+
+two:
+  rs_number: MyString
+  snpedia_revision: MyString
