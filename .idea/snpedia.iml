@@ -114,6 +114,34 @@
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="db:migrate: snpedia" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="snpedia" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="development" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:migrate" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
@@ -136,6 +164,7 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.0.1, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.2.0, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.6.3, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="crack (v0.4.1, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.0.2, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="haml (v4.1.0.beta.1, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
@@ -164,9 +193,11 @@
     <orderEntry type="library" scope="PROVIDED" name="redis (v3.0.7, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="redis-namespace (v1.4.1, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="resque (v1.25.1, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="resque-pool (v0.3.0, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="resque-scheduler (v2.3.1, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_parser (v3.1.3, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rufus-scheduler (v2.0.24, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="safe_yaml (v0.9.7, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.2.14, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v4.0.1, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sdoc (v0.4.0, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
@@ -179,6 +210,7 @@
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.1.3, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.15, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="trollop (v1.16.2, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v2.2.0, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.38, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.4.0, RVM: ruby-2.0.0-p353 [snpedia]) [gem]" level="application" />

@@ -1,11 +1,18 @@
 Snpedia::Application.routes.draw do
-  resources :snps
+  resources :snps do
+    collection do
+      get 'start', to: :start
+      get 'start/details', to: :start_details
+    end
+  end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'snps#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -53,7 +53,6 @@ gem 'haml-rails'
 gem 'html2haml'
 
 # Setup Bootstrap
-
 gem 'bootstrap-sass'
 
 group :development do
@@ -61,7 +60,9 @@ group :development do
 end
 
 # Resque
-
 gem 'resque'
-#gem 'resque-pool'
+gem 'resque-pool'
 gem 'resque-scheduler'
+
+# Crack
+gem 'crack'

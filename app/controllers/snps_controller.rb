@@ -21,6 +21,27 @@ class SnpsController < ApplicationController
   def edit
   end
 
+  # GET /snps/start
+  def start
+    Snp.delete_all
+
+    job=SnpediaReadSnpsJob.new
+    job.work(nil)
+
+    #Resque.enqueue(SnpediaReadSnpsJob,nil)
+
+    redirect_to snps_path
+  end
+
+  # GET /snps/start/details
+  def start_details
+
+    job=SnpediaReadSnpDetailsJob.new
+    job.work()
+
+    redirect_to snps_path
+  end
+
   # POST /snps
   # POST /snps.json
   def create
