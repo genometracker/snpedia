@@ -1,5 +1,5 @@
 read_snp_details:
-  every: 30s
+  every: 5min
   # you can use rufus-scheduler "every" syntax in place of cron if you prefer
   # every: 1h
   # By default the job name (hash key) will be taken as worker class name.

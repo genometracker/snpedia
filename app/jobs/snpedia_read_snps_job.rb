@@ -5,7 +5,7 @@ require 'resque_scheduler'
 
 class SnpediaReadSnpsJob
 
-  @queue='get_snps'
+  @queue='read_snps'
 
   LIMIT = 500
   URL = 'http://bots.snpedia.com/api.php?format=xml&action=query&list=categorymembers&cmtitle=Category:Is_a_snp&cmlimit=%{limit}'

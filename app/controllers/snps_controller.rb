@@ -37,6 +37,8 @@ class SnpsController < ApplicationController
   # GET /snps/start/details
   def start_details
 
+
+
     job=SnpediaReadSnpDetailsJob.new
     job.work()
 

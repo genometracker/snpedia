@@ -15,6 +15,5 @@ class SnpediaReadSnpDetailsJob
 
     page = hash['api']['parse']['text']
 
-    nil
   end
 end
