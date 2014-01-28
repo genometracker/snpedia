@@ -21,7 +21,7 @@ class SnpediaReadSnpsJob
     data = open(URI.encode(url))
     hash = Crack::XML.parse(data.read)
 
-    next_page = hash['api']['query_continue']['categorymembers']['cmcontinue']
+    next_page = hash['api']['query_continue']['categorymembers']['cmcontinue'].to_s
 
     hash['api']['query']['categorymembers']['cm'].each do |cm|
       if cm['title'].to_s.start_with?('R')
@@ -30,6 +30,9 @@ class SnpediaReadSnpsJob
         snp.save
       end
     end
+
+    Resque.enqueue_in(5.minutes,SnpediaReadSnpsJob,next_page)
+
   end
 
 end

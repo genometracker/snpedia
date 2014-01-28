@@ -66,3 +66,7 @@ gem 'resque-scheduler'
 
 # Crack
 gem 'crack'
+
+# Pagination
+
+gem 'kaminari'

@@ -4,7 +4,8 @@ class SnpsController < ApplicationController
   # GET /snps
   # GET /snps.json
   def index
-    @snps = Snp.all
+    @snps = Snp.all.page(params[:page])
+
   end
 
   # GET /snps/1
