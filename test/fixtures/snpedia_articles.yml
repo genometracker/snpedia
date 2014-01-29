@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  revision: 1
+  run_nr: 1
+  xml: MyString
+  references: 
+
+two:
+  revision: 1
+  run_nr: 1
+  xml: MyString
+  references: 

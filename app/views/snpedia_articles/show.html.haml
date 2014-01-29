@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Revision:
+  = @snpedia_article.revision
+%p
+  %b Run nr:
+  = @snpedia_article.run_nr
+%p
+  %b Xml:
+  = @snpedia_article.xml
+%p
+  %b References:
+  = @snpedia_article.references
+
+= link_to 'Edit', edit_snpedia_article_path(@snpedia_article)
+\|
+= link_to 'Back', snpedia_articles_path

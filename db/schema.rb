@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128131649) do
+ActiveRecord::Schema.define(version: 20140129094027) do
+
+  create_table "snpedia_articles", force: true do |t|
+    t.integer  "revision"
+    t.integer  "run_nr"
+    t.integer  "snp_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "xml"
+  end
 
   create_table "snps", force: true do |t|
     t.string   "rs_number"

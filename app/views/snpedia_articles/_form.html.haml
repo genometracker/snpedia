@@ -1,0 +1,22 @@
+= form_for @snpedia_article do |f|
+  - if @snpedia_article.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@snpedia_article.errors.count, "error")} prohibited this snpedia_article from being saved:"
+      %ul
+        - @snpedia_article.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :revision
+    = f.number_field :revision
+  .field
+    = f.label :run_nr
+    = f.number_field :run_nr
+  .field
+    = f.label :xml
+    = f.text_field :xml
+  .field
+    = f.label :references
+    = f.text_field :references
+  .actions
+    = f.submit 'Save'

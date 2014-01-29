@@ -1,4 +1,8 @@
 Snpedia::Application.routes.draw do
+  resources :snpedia_articles
+
+  resources :snpedia
+
   resources :snps do
     collection do
       get 'start', to: :start
