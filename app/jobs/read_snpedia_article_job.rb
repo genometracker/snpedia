@@ -10,7 +10,7 @@ class ReadSnpediaArticleJob
   def self.perform
     logger=Rails.logger
 
-    snp = Snp.includes(:snpedia_article).where(snpedia_articles: {snp_id: nil}).first
+    snp = Snp.includes(:snpedia_article).where(snpedia_articles: {snp_id: nil, run_nr: nil }).first
 
     logger.info "Getting article for #{snp.rs_number}."
 
@@ -40,6 +40,7 @@ class ReadSnpediaArticleJob
 
           # Find variant
           variant=row.css('td')[0].text.strip
+
           # Remove unneeded characters
           variant=variant.delete '('
           variant=variant.delete ')'

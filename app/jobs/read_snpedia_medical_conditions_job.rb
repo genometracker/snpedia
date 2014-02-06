@@ -35,6 +35,6 @@ class ReadSnpediaMedicalConditionsJob
       #snp.save
     end
 
-    #Resque.enqueue_in(5.seconds,ReadSnpediaMedicalConditionsJob,nil)
+    Resque.enqueue_in(5.seconds,ReadSnpediaMedicalConditionsJob,nil)
   end
 end
