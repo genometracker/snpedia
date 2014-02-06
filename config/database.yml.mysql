@@ -1,20 +1,41 @@
-#Postgres version
+# MySql
 
-default:
-    adapter: postgresql
-    encoding: unicode
-    pool: 5
-    username: snpedia
-    password: snpedia
-
-development:
-    <<: *default
-    database: snpedia_development
-    host: localhost
-    port: 5432
-
+#
+# PRODUCTION
+#
 production:
-    <<: *default
-    database: snpedia_production
-    host: localhost
-    port: 5432
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: snpedia_production
+  pool: 10
+  username: snpedia
+  password: snpedia
+  # host: localhost
+  # socket: /tmp/mysql.sock
+
+#
+# Development specific
+#
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: snpedia_development
+  pool: 5
+  username: snpedia
+  password: snpedia
+  # socket: /tmp/mysql.sock
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: snpedia_test
+  pool: 5
+  username: snpedia
+  password: snpedia
+  # socket: /tmp/mysql.sock
