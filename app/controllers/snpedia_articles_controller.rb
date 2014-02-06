@@ -4,7 +4,7 @@ class SnpediaArticlesController < ApplicationController
   # GET /snpedia_articles
   # GET /snpedia_articles.json
   def index
-    @snpedia_articles = SnpediaArticle.all
+    @snpedia_articles = SnpediaArticle.all.page(params[:page])
   end
 
   # GET /snpedia_articles/1

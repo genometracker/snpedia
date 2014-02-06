@@ -8,4 +8,7 @@ conf = YAML.load_file(Rails.root.join('config', 'resque.yml'))
 Resque.redis = conf['server'] +':'+ conf['port'].to_s
 Resque.redis.namespace = conf['namespace']
 
-Resque.schedule = conf['schedules']
+unless conf['schedules']==nil
+  Resque.schedule = conf['schedules']
+end
+

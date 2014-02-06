@@ -3,7 +3,7 @@ require 'crack'
 require 'resque'
 require 'resque_scheduler'
 
-class SnpediaReadSnpsJob
+class ReadSnpediaSnpsJob
 
   @queue='read_snpedia_snps'
 
@@ -25,14 +25,16 @@ class SnpediaReadSnpsJob
 
     hash['api']['query']['categorymembers']['cm'].each do |cm|
       if cm['title'].to_s.start_with?('R')
-
         snp=Snp.new
         snp.rs_number=cm['title']
         snp.save
       end
     end
 
-    Resque.enqueue_in(5.minutes,SnpediaReadSnpsJob,next_page)
+    unless next_page == nil
+      Resque.enqueue_in(5.seconds,ReadSnpediaSnpsJob,next_page)
+    end
+
 
   end
 

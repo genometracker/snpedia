@@ -1,4 +1,8 @@
 Snpedia::Application.routes.draw do
+  resources :variant_effects
+
+  resources :medical_conditions
+
   resources :snpedia_articles
 
   resources :snpedia

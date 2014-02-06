@@ -26,10 +26,7 @@ class SnpsController < ApplicationController
   def start
     Snp.delete_all
 
-    job=SnpediaReadSnpsJob.perform(nil)
-    #job.perform(nil)
-
-    #Resque.enqueue(SnpediaReadSnpsJob,nil)
+    ReadSnpediaSnpsJob.perform(nil)
 
     redirect_to snps_path
   end
@@ -37,10 +34,7 @@ class SnpsController < ApplicationController
   # GET /snps/start/details
   def start_details
 
-    job=ReadSnpediaArticleJob.perform()
-    #job.work()
-
-    #Resque.enqueue(SnpediaReadSnpDetailsJob,nil)
+    ReadSnpediaArticleJob.perform()
 
     redirect_to snps_path
   end

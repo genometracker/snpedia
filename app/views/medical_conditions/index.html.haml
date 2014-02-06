@@ -1,0 +1,19 @@
+%h1 Listing medical_conditions
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @medical_conditions.each do |medical_condition|
+    %tr
+      %td= medical_condition.name
+      %td= link_to 'Show', medical_condition
+      %td= link_to 'Edit', edit_medical_condition_path(medical_condition)
+      %td= link_to 'Destroy', medical_condition, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Medical condition', new_medical_condition_path

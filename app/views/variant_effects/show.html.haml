@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Snp:
+  = @variant_effect.snp
+%p
+  %b Variant:
+  = @variant_effect.variant
+%p
+  %b Description:
+  = @variant_effect.description
+
+= link_to 'Edit', edit_variant_effect_path(@variant_effect)
+\|
+= link_to 'Back', variant_effects_path

@@ -4,8 +4,8 @@
   %tr
     %th Revision
     %th Run nr
-    %th Xml
-    %th References
+    //%th Xml
+    %th Snp
     %th
     %th
     %th
@@ -14,8 +14,8 @@
     %tr
       %td= snpedia_article.revision
       %td= snpedia_article.run_nr
-      %td= snpedia_article.xml
-      %td= snpedia_article.references
+      //%td= snpedia_article.xml
+      %td= snpedia_article.snp
       %td= link_to 'Show', snpedia_article
       %td= link_to 'Edit', edit_snpedia_article_path(snpedia_article)
       %td= link_to 'Destroy', snpedia_article, :method => :delete, :data => { :confirm => 'Are you sure?' }
@@ -23,3 +23,5 @@
 %br
 
 = link_to 'New Snpedia article', new_snpedia_article_path
+
+= paginate @snpedia_articles

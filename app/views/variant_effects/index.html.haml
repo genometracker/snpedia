@@ -1,0 +1,23 @@
+%h1 Listing variant_effects
+
+%table
+  %tr
+    %th Snp
+    %th Variant
+    %th Description
+    %th
+    %th
+    %th
+
+  - @variant_effects.each do |variant_effect|
+    %tr
+      %td= variant_effect.snp
+      %td= variant_effect.variant
+      %td= variant_effect.description
+      %td= link_to 'Show', variant_effect
+      %td= link_to 'Edit', edit_variant_effect_path(variant_effect)
+      %td= link_to 'Destroy', variant_effect, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Variant effect', new_variant_effect_path

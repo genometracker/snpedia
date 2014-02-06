@@ -1,0 +1,2 @@
+module VariantEffectsHelper
+end

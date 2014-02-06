@@ -1,1 +1,1 @@
-json.extract! @snp, :id, :rs_number, :snpedia_revision, :created_at, :updated_at
+json.extract! @snp, :id, :rs_number, :created_at, :updated_at
