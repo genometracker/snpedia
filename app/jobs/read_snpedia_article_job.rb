@@ -24,7 +24,8 @@ class ReadSnpediaArticleJob
     hash = Crack::JSON.parse(xml)
 
     article = SnpediaArticle.new
-    article.revision = hash['api']['parse']['revid'].to_i
+    #article.revision = hash['api']['parse']['revid'].to_i
+    article.revision = hash['parse']['revid'].to_i
     article.run_nr = 1
     article.snp = snp
 
@@ -34,7 +35,8 @@ class ReadSnpediaArticleJob
     article.save
 
 
-    html = hash['api']['parse']['text']
+    #html = hash['api']['parse']['text']
+    html = hash['parse']['text']
 
     unless html==nil
       nk = Nokogiri::HTML.parse(html)
