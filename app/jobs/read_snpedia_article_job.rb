@@ -18,15 +18,17 @@ class ReadSnpediaArticleJob
 
     logger.info "Getting article for #{snp.rs_number}."
 
-    data= open(URI.encode('http://bots.snpedia.com/api.php?action=parse&format=xml&page='+snp.rs_number))
+    data= open(URI.encode('http://bots.snpedia.com/api.php?action=parse&format=json&page='+snp.rs_number))
 
     xml = data.read
-    hash = Crack::XML.parse(xml)
+    hash = Crack::JSON.parse(xml)
 
     article = SnpediaArticle.new
     article.revision = hash['api']['parse']['revid'].to_i
     article.run_nr = 1
     article.snp = snp
+
+    # Skipping this because of MySql error
     article.xml = xml
 
     article.save
