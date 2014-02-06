@@ -24,6 +24,8 @@ class SnpsController < ApplicationController
 
   # GET /snps/start
   def start
+    SnpediaArticle.delete_all
+    VariantEffect.delete_all
     Snp.delete_all
 
     ReadSnpediaSnpsJob.perform(nil)

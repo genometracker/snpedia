@@ -14,6 +14,8 @@ class ReadSnpediaArticleJob
 
     snp.run_nr = 1
 
+    snp.save
+
     logger.info "Getting article for #{snp.rs_number}."
 
     data= open(URI.encode('http://bots.snpedia.com/api.php?action=parse&format=xml&page='+snp.rs_number))

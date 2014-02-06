@@ -4,6 +4,18 @@
   %b Rs number:
   = @snp.rs_number
 
+%table
+  %tr
+    %th Variant
+    %th Magnitude
+    %th Description
+
+  - @snp.variant_effects.each do |variant_effect|
+    %tr
+      %td= variant_effect.variant
+      %td= variant_effect.magnitude
+      %td= variant_effect.description
+
 = link_to 'Edit', edit_snp_path(@snp)
 \|
 = link_to 'Back', snps_path
