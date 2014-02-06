@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206090850) do
+ActiveRecord::Schema.define(version: 20140206153035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140206090850) do
     t.string   "rs_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "run_nr"
   end
 
   create_table "variant_effects", force: true do |t|

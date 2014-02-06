@@ -10,7 +10,9 @@ class ReadSnpediaArticleJob
   def self.perform
     logger=Rails.logger
 
-    snp = Snp.includes(:snpedia_article).where(snpedia_articles: {snp_id: nil, run_nr: nil }).first
+    snp = Snp.includes(:snpedia_article).where(snpedia_articles: {snp_id: nil}).where(run_nr: nil).first
+
+    snp.run_nr = 1
 
     logger.info "Getting article for #{snp.rs_number}."
 
@@ -24,6 +26,7 @@ class ReadSnpediaArticleJob
     article.run_nr = 1
     article.snp = snp
     article.xml = xml
+
     article.save
 
 
