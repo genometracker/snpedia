@@ -39,7 +39,7 @@ class ReadSnpediaArticleJob
     html = hash['parse']['text']
 
     unless html==nil
-      nk = Nokogiri::HTML.parse(html)
+      nk = Nokogiri::HTML.parse(html.to_s)
 
       # Find a table where variants are
       nk.css('.smwtable').each { |table|
