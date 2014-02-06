@@ -74,4 +74,5 @@ gem 'kaminari'
 
 # Postgres
 
-gem 'pg'
+gem 'pg', group: :postgres
+gem 'mysql', group: :mysql
