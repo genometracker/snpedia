@@ -1,0 +1,20 @@
+#Postgres version
+
+default:
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    username: snpedia
+    password: snpedia
+
+development:
+    <<: *default
+    database: snpedia_development
+    host: localhost
+    port: 5432
+
+production:
+    <<: *default
+    database: snpedia_production
+    host: localhost
+    port: 5432
