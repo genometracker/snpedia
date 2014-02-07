@@ -68,7 +68,7 @@ class ReadSnpediaArticleJob
 
     logger.info "#{snp.rs_number} saved to database.'"
 
-    Resque.enqueue_in(5.seconds,ReadSnpediaArticleJob)
+    Resque.enqueue_in(1.seconds,ReadSnpediaArticleJob)
 
   end
 end
