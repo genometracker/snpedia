@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Snp:
+  = @gwas_result.snp
+%p
+  %b Risk allele:
+  = @gwas_result.risk_allele
+%p
+  %b Effect size:
+  = @gwas_result.effect_size
+%p
+  %b P value:
+  = @gwas_result.p_value
+%p
+  %b Article url:
+  = @gwas_result.article_url
+%p
+  %b Article title:
+  = @gwas_result.article_title
+
+= link_to 'Edit', edit_gwas_result_path(@gwas_result)
+\|
+= link_to 'Back', gwas_results_path

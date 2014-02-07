@@ -1,0 +1,31 @@
+%h1 Listing gwas_results
+
+=link_to 'genome.gov data', gdgr_gwas_results_path
+
+%table
+  %tr
+    %th Snp
+    %th Risk allele
+    %th Effect size
+    %th P value
+    %th Article url
+    %th Article title
+    %th
+    %th
+    %th
+
+  - @gwas_results.each do |gwas_result|
+    %tr
+      %td= gwas_result.snp
+      %td= gwas_result.risk_allele
+      %td= gwas_result.effect_size
+      %td= gwas_result.p_value
+      %td= gwas_result.article_url
+      %td= gwas_result.article_title
+      %td= link_to 'Show', gwas_result
+      %td= link_to 'Edit', edit_gwas_result_path(gwas_result)
+      %td= link_to 'Destroy', gwas_result, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Gwas result', new_gwas_result_path

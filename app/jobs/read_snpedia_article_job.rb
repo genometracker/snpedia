@@ -23,15 +23,14 @@ class ReadSnpediaArticleJob
     xml = data.read
     hash = Crack::XML.parse(xml)
 
+    # Skipping this because of MySql error
+
     #article = SnpediaArticle.new
     #article.revision = hash['api']['parse']['revid'].to_i
     #article.revision = hash['parse']['revid'].to_i
     #article.run_nr = 1
     #article.snp = snp
-
-    # Skipping this because of MySql error
-    # article.xml = xml
-
+    #article.xml = xml
     #article.save
 
 
@@ -63,6 +62,15 @@ class ReadSnpediaArticleJob
           ve.save
         }
       }
+
+      nk.xpath('//*[@id="mw-content-text"]/table').each do |table|
+
+        if table.xpath('tbody/tr[1]/th/big/a').text.contains("GWAS data")
+          gd=GwasData.new
+
+        end
+        
+      end
 
     end
 

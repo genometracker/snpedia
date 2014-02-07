@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206153035) do
+ActiveRecord::Schema.define(version: 20140207141414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gwas_results", force: true do |t|
+    t.integer  "snp_id"
+    t.string   "risk_allele"
+    t.string   "effect_size"
+    t.string   "p_value"
+    t.string   "article_url"
+    t.string   "article_title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "gwas_results", ["snp_id"], name: "index_gwas_results_on_snp_id", using: :btree
 
   create_table "medical_conditions", force: true do |t|
     t.string   "name"
@@ -24,6 +37,18 @@ ActiveRecord::Schema.define(version: 20140206153035) do
 
   create_table "medical_conditions_snps", force: true do |t|
     t.integer "medical_condition_id"
+    t.integer "snp_id"
+  end
+
+  create_table "medicines", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "medicines_snps", force: true do |t|
+    t.integer "medicine_id"
     t.integer "snp_id"
   end
 

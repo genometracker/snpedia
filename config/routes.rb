@@ -1,4 +1,12 @@
 Snpedia::Application.routes.draw do
+  resources :medicines
+
+  resources :gwas_results do
+    collection do
+      get 'gdgr', to: :gdgr
+    end
+  end
+
   resources :variant_effects
 
   resources :medical_conditions
