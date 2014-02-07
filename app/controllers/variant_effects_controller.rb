@@ -4,7 +4,7 @@ class VariantEffectsController < ApplicationController
   # GET /variant_effects
   # GET /variant_effects.json
   def index
-    @variant_effects = VariantEffect.all
+    @variant_effects = VariantEffect.all.page(params[:page])
   end
 
   # GET /variant_effects/1
