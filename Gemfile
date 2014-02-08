@@ -78,6 +78,8 @@ gem 'htmlentities'
 
 gem 'httparty'
 
+gem 'backup'
+
 # Postgres
 
 gem 'pg', group: :postgres
