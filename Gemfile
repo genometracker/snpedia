@@ -72,6 +72,12 @@ gem 'nokogiri'
 
 gem 'kaminari'
 
+# HTML
+
+gem 'htmlentities'
+
+gem 'httparty'
+
 # Postgres
 
 gem 'pg', group: :postgres

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207141414) do
+ActiveRecord::Schema.define(version: 20140208163742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 20140207141414) do
     t.integer "medicine_id"
     t.integer "snp_id"
   end
+
+  create_table "publications", force: true do |t|
+    t.integer  "snp_id"
+    t.string   "title"
+    t.string   "url"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "publications", ["snp_id"], name: "index_publications_on_snp_id", using: :btree
 
   create_table "snpedia_articles", force: true do |t|
     t.integer  "revision"

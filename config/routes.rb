@@ -1,4 +1,6 @@
 Snpedia::Application.routes.draw do
+  resources :publications
+
   resources :medicines
 
   resources :gwas_results do
